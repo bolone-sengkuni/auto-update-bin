@@ -24,4 +24,7 @@ jobs:
             **/requirements*.txt
             **/pyproject.toml
 
-      - run: uv sync
+      - run: |
+          uv sync
+          uv run main.py
+
