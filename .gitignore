@@ -9,5 +9,4 @@ wheels/
 # Virtual environments
 .venv
 bin
-bin.tar.gz
 .env
