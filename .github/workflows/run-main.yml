@@ -33,7 +33,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload to GitHub Release
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+
+      - name: Upload bin.tar.gz
         uses: softprops/action-gh-release@v2
         with:
           files: bin.tar.gz
