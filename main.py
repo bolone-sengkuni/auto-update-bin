@@ -22,6 +22,7 @@ def get_release_new(owner: str, repo: str):
     )
 
     result = resp.json()
+    print(result)
     tag_name, assets = result['tag_name'], result['assets']
     list_latest = []
     for c in assets:
