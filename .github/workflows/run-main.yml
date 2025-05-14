@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master]
+    
+permissions:
+  contents: write
 
 jobs:
   run:
@@ -27,4 +30,5 @@ jobs:
       - run: |
           uv sync
           uv run main.py
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
