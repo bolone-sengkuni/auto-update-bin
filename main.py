@@ -10,9 +10,6 @@ TOKEN = os.getenv("GITHUB_TOKEN")
 
 os.makedirs('bin', exist_ok=True)
 
-with open('bin/.gitkeep', 'w') as f:
-    f.write("#")
-
 
 def get_release_new(owner: str, repo: str):
     resp = req.get(
