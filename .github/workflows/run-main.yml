@@ -5,7 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master]
-    
+
 permissions:
   contents: write
 
@@ -32,3 +32,8 @@ jobs:
           uv run main.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: bin.tar.gz
