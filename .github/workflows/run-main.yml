@@ -33,12 +33,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v1.0.0
+      - name: Commit and push bin folder
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bin/.gitkeep
+          git commit -m "Add bin"
+          git push origin master
 
-      - name: Upload bin.tar.gz
-        uses: softprops/action-gh-release@v2
-        with:
-          files: bin.tar.gz
+          
+      # - name: Create GitHub Release
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     tag_name: v1.0.0
+
+      # - name: Upload bin.tar.gz
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     files: bin.tar.gz
